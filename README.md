@@ -27,22 +27,18 @@ A full-stack scheduling platform built with PERN stack (PostgreSQL, Express, Rea
 
 #### Option 1: Neon PostgreSQL (Cloud)
 
-1. Use your Neon connection string to connect:
-
-```bash
-psql 'postgresql://neondb_owner:npg_M1WYeJSOxoV9@ep-damp-mouse-a11ijnme-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-```
+1. Get your Neon connection string from your Neon dashboard
 
 2. Run the schema:
 
 ```bash
-psql 'postgresql://neondb_owner:npg_M1WYeJSOxoV9@ep-damp-mouse-a11ijnme-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require' -f server/database.sql
+psql 'YOUR_CONNECTION_STRING_HERE' -f server/database.sql
 ```
 
 3. Run the seed data:
 
 ```bash
-psql 'postgresql://neondb_owner:npg_M1WYeJSOxoV9@ep-damp-mouse-a11ijnme-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require' -f server/seed.sql
+psql 'YOUR_CONNECTION_STRING_HERE' -f server/seed.sql
 ```
 
 #### Option 2: Local PostgreSQL
@@ -84,17 +80,17 @@ npm install
 **Option 1: Using Connection String (Recommended for Neon/Cloud):**
 
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_M1WYeJSOxoV9@ep-damp-mouse-a11ijnme-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+DATABASE_URL=postgresql://user:password@host:port/database?sslmode=require
 PORT=5000
 ```
 
 **Option 2: Using Individual Parameters (For Neon PostgreSQL):**
 
 ```env
-DB_USER=neondb_owner
-DB_HOST=ep-damp-mouse-a11ijnme-pooler.ap-southeast-1.aws.neon.tech
-DB_NAME=neondb
-DB_PASSWORD=npg_M1WYeJSOxoV9
+DB_USER=your_username
+DB_HOST=your_host.neon.tech
+DB_NAME=your_database
+DB_PASSWORD=your_password
 DB_PORT=5432
 DB_SSL=true
 PORT=5000
@@ -136,11 +132,13 @@ cd client
 npm install
 ```
 
-3. Create a `.env` file:
+3. Create a `.env` file (optional for local development):
 
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5000
 ```
+
+**Note:** If `VITE_API_URL` is not set, the app will use relative paths which work with Vite's proxy in development.
 
 4. Start the development server:
 
