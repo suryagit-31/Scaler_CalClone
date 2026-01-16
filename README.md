@@ -132,13 +132,21 @@ cd client
 npm install
 ```
 
-3. Create a `.env` file (optional for local development):
+3. Create a `.env` file:
+
+**For Production/Deployment:**
+
+```env
+VITE_API_URL=https://scaler-calclone.onrender.com
+```
+
+**For Local Development (optional):**
 
 ```env
 VITE_API_URL=http://localhost:5000
 ```
 
-**Note:** If `VITE_API_URL` is not set, the app will use relative paths which work with Vite's proxy in development.
+**Note:** If `VITE_API_URL` is not set, the app will use relative paths which work with Vite's proxy in development (localhost:5000).
 
 4. Start the development server:
 

@@ -26,7 +26,7 @@
      - `DATABASE_URL` = (your database URL from step 1)
      - `NODE_ENV` = `production`
    - Click **"Create Web Service"**
-   - Copy your backend URL (e.g., `https://cell-scaler-backend.onrender.com`)
+   - Copy your backend URL (e.g., `https://scaler-calclone.onrender.com`)
 
 ### Frontend (Vercel) - 3 minutes
 
@@ -40,7 +40,7 @@
      - **Build Command**: `npm run build`
      - **Output Directory**: `dist`
    - Environment Variables:
-     - `VITE_API_URL` = `https://your-backend-url.onrender.com`
+     - `VITE_API_URL` = `https://scaler-calclone.onrender.com`
    - Click **"Deploy"**
 
 2. **Update Backend CORS (if needed)**
@@ -50,7 +50,7 @@
 ### ✅ Done!
 
 - **Frontend**: `https://your-app.vercel.app`
-- **Backend**: `https://your-backend.onrender.com`
+- **Backend**: `https://scaler-calclone.onrender.com`
 
 ---
 
@@ -62,7 +62,7 @@
 - [ ] `FRONTEND_URL` - Your Vercel URL (optional, for CORS)
 
 ### Frontend (Vercel)
-- [ ] `VITE_API_URL` - Your Render backend URL
+- [ ] `VITE_API_URL` - `https://scaler-calclone.onrender.com`
 
 ---
 
@@ -80,9 +80,5 @@
 **API Calls Failing?**
 - Verify `VITE_API_URL` includes `https://`
 - Check backend is deployed and running
-- Test backend health: `https://your-backend.onrender.com/api/health`
-
----
-
-For detailed instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
+- Test backend health: `https://scaler-calclone.onrender.com/api/health`
 
